@@ -216,7 +216,7 @@
         },
         showScanQrPopup: function (linksOnly) {
             Telegram.WebApp.showScanQrPopup({
-                text: linksOnly ? 'with any link' : 'for test purposes'
+                text: linksOnly ? 'with any link' : 'Отсканируйте qr-code на ряду'
             }, function (text) {
                 if (linksOnly) {
                     const lowerText = text.toString().toLowerCase();
