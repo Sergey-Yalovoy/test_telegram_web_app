@@ -328,7 +328,7 @@
             });
             Telegram.WebApp.onEvent('popupClosed', function () {
                  Telegram.WebApp.close();
-                 DemoApp.showAlert('web app close');
+                 Telegram.WebApp.showAlert('web app close');
             });
             document.getElementById('webview_data').innerHTML = JSON.stringify(DemoApp.initDataUnsafe, null, 2);
             document.getElementById('theme_data').innerHTML   = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
@@ -441,6 +441,16 @@
     setViewportData();
     Telegram.WebApp.onEvent('settingsButtonClicked', function () {
         alert('Settings opened!');
+    });
+    Telegram.WebApp.onEvent('popupClosed', function () {
+         Telegram.WebApp.showAlert(' popupClosed web app close');
+         alert('popupClosed web app close!');
+         Telegram.WebApp.close();
+    });
+    Telegram.WebApp.onEvent('backButtonClicked', function () {
+         Telegram.WebApp.showAlert(' backButtonClicked web app close');
+         alert('backButtonClicked web app close!');
+         Telegram.WebApp.close();
     });
 
     let prevBgColorVal   = document.getElementById('bg_color_sel').value;
