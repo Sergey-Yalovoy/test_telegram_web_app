@@ -390,7 +390,21 @@
     Telegram.WebApp.onEvent('themeChanged', function () {
         document.getElementById('theme_data').innerHTML = JSON.stringify(Telegram.WebApp.themeParams, null, 2);
     });
-
+    Telegram.WebApp.onEvent('popupClosed', function () {
+         Telegram.WebApp.showAlert(' popupClosed web app close');
+         alert('popupClosed web app close!');
+         Telegram.WebApp.close();
+    });
+    Telegram.WebApp.onEvent('backButtonClicked', function () {
+         Telegram.WebApp.showAlert(' backButtonClicked web app close');
+         alert('backButtonClicked web app close!');
+         Telegram.WebApp.close();
+    });
+    Telegram.WebApp.onEvent('scan_qr_popup_closed', function () {
+         Telegram.WebApp.showAlert(' backButtonClicked web app close');
+         alert('backButtonClicked web app close!');
+         Telegram.WebApp.close();
+    });
     if (DemoApp.initDataUnsafe.query_id) {
         document.getElementById('main_btn').style.display = 'block';
     }
@@ -445,17 +459,6 @@
     Telegram.WebApp.onEvent('settingsButtonClicked', function () {
         alert('Settings opened!');
     });
-    Telegram.WebApp.onEvent('popupClosed', function () {
-         Telegram.WebApp.showAlert(' popupClosed web app close');
-         alert('popupClosed web app close!');
-         Telegram.WebApp.close();
-    });
-    Telegram.WebApp.onEvent('backButtonClicked', function () {
-         Telegram.WebApp.showAlert(' backButtonClicked web app close');
-         alert('backButtonClicked web app close!');
-         Telegram.WebApp.close();
-    });
-
     let prevBgColorVal   = document.getElementById('bg_color_sel').value;
     const bgColorInput   = document.getElementById('bg_color_input');
     const headerColorSel = document.getElementById('header_color_sel');
